@@ -79,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Menu.list[index],
                                 style: const TextStyle(
                                   fontSize: 25,
+                                  fontFamily: 'sans serif',
                                 ),
                               ),
                             ],

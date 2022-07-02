@@ -34,7 +34,10 @@ class _AddMenuPageState extends State<AddMenuPage> {
                     _text = value;
                   });
                 },
-                style: TextStyle(fontSize: 25),
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontFamily: 'sans serif',
+                ),
               ),
               const SizedBox(height: 8),
               Row(
