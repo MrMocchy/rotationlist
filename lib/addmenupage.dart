@@ -49,6 +49,9 @@ class _AddMenuPageState extends State<AddMenuPage> {
                         Navigator.of(context).pop();
                       },
                       child: const Text('Add')),
+                  const SizedBox(
+                    width: 20,
+                  ),
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
