@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late List<String> _list;
-  bool isDeleteEnable = true;
+  bool isDeleteEnable = false;
 
   @override
   void initState() {
@@ -54,7 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
                   setState(() {});
                 },
-                icon: const Icon(Icons.add))
+                icon: const Icon(Icons.add)),
+            IconButton(
+                onPressed: () {
+                  setState(() => isDeleteEnable ^= true);
+                },
+                icon: const Icon(Icons.delete))
           ],
         ),
         body: ListView.builder(
@@ -82,22 +87,29 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               IconButton(
                                 onPressed: () {
-                                  Menu.swap(index, index - 1);
+                                  setState(() => Menu.swap(index, index - 1));
                                 },
                                 icon: const Icon(Icons.keyboard_arrow_up),
                                 iconSize: 30,
                               ),
                               IconButton(
                                 onPressed: () {
-                                  Menu.swap(index, index + 1);
+                                  setState(() => Menu.swap(index, index + 1));
                                 },
                                 icon: const Icon(Icons.keyboard_arrow_down),
+                                iconSize: 30,
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() => Menu.goBottom(index));
+                                },
+                                icon: const Icon(Icons.vertical_align_bottom),
                                 iconSize: 30,
                               ),
                               if (isDeleteEnable)
                                 IconButton(
                                   onPressed: () {
-                                    Menu.delete(index);
+                                    setState(() => Menu.delete(index));
                                   },
                                   icon: const Icon(Icons.delete),
                                   iconSize: 30,

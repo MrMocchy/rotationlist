@@ -18,6 +18,7 @@ class Menu {
 
   static void add(String str) {
     list.insert(0, str);
+    save();
   }
 
   static void swap(int index1, int index2) {
@@ -28,9 +29,17 @@ class Menu {
     String str = list[index1];
     list[index1] = list[index2];
     list[index2] = str;
+    save();
   }
 
   static void delete(int index) {
     list.removeAt(index);
+    save();
+  }
+
+  static void goBottom(int index) {
+    list.add(list[index]);
+    list.removeAt(index);
+    save();
   }
 }
