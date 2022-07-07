@@ -38,6 +38,11 @@ class _AddMenuPageState extends State<AddMenuPage> {
                   fontSize: 25,
                   fontFamily: 'sans serif',
                 ),
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.create),
+                  hintText: 'ここに入力',
+                  labelText: 'ラベル名',
+                ),
               ),
               const SizedBox(height: 8),
               Row(

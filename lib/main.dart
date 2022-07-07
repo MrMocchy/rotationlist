@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rotationlist/addMenuPage.dart';
 import 'package:rotationlist/menu.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late List<String> _list;
   bool isDeleteEnable = false;
 
   @override
@@ -45,7 +45,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Menu List'),
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 25,
+            fontFamily: 'sans serif',
+          ),
           actions: <Widget>[
+            IconButton(
+                onPressed: () async {
+                  html.window.open('https://mrmocchy.github.io/', '');
+                },
+                icon: const Icon(Icons.info)),
             IconButton(
                 onPressed: () async {
                   await Navigator.of(context)
