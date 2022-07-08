@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             itemCount: Menu.list.length,
             itemBuilder: (BuildContext context, int index) {
               return Container(
-                margin: const EdgeInsets.only(left: 30, right: 30),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Card(
                   child: Center(
                     child: Row(
@@ -85,11 +85,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           Row(
                             children: [
                               const SizedBox(width: 10, height: 50),
-                              Text(
-                                Menu.list[index],
-                                style: const TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: 'sans serif',
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width -
+                                    (isDeleteEnable ? 230 : 180),
+                                child: Text(
+                                  Menu.list[index],
+                                  style: const TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'sans serif',
+                                  ),
                                 ),
                               ),
                             ],
